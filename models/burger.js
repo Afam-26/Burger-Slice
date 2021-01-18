@@ -17,7 +17,24 @@ var burger = {
       orm.update("burgers", objColVals, condition, function(res) {
         cb(res);
       });
-    },   
+    },  
+    
+    delete: function (columnName, columnValue, cb) {
+      orm.delete("burgers", columnName, columnValue, function(res) {
+        // No business logic
+        cb(res);
+      });
+    },
+    modelDeleteAsyncExample: async function (columnName, columnValue, cb) {
+  
+  
+      const results = await orm.ormDeleteAsyncExample("burgers", columnName, columnValue);
+
+      return results;
+
+    }
+    
+    
 };
   
   // Export the database functions for the controller (catsController.js).

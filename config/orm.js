@@ -85,7 +85,31 @@ var orm = {
     
           cb(result);
         });
-      },    
+      },  
+      
+      delete: function(tableName, columnName, columnValue, cb) {
+        var queryString = `DELETE FROM ??
+                           WHERE ??=?`;
+    
+        connection.query(queryString, [tableName, columnName, columnValue], function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      },
+      ormDeleteAsyncExample: async function(tableName, columnName, columnValue) {
+        let SQL_STATEMENT = `DELETE FROM ?? 
+                             WHERE ?? = ?`;
+    
+        try {
+            const [rows, fields] = await connection.promise().query(SQL_STATEMENT, [tableName, columnName, columnValue]);
+            return rows;
+        } catch (error) {
+            console.log(error);
+        }
+      }
         
     
 };
