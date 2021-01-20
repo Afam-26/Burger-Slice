@@ -1,40 +1,26 @@
+// Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
 
 var burger = {
     all: function(cb) {
-      orm.all("burgers", function(res) {
+      orm.seleteAll(function(res) {
         cb(res);
       });
     },
-    // The variables cols and vals are arrays.
-    create: function(cols, vals, cb) {
-      orm.create("burgers", cols, vals, function(res) {
+    
+    create: function(burger_name, cb) {
+      orm.insertOne(burger_name, cb, (res)=> {
         cb(res);
       });
     },
-    update: function(objColVals, condition, cb) {
-      orm.update("burgers", objColVals, condition, function(res) {
+    update: function(devoured, id, cb) {
+      orm.update(devoured, id, (res)=> {
         cb(res);
       });
     },  
-    
-    delete: function (columnName, columnValue, cb) {
-      orm.delete("burgers", columnName, columnValue, function(res) {
-        // No business logic
-        cb(res);
-      });
-    },
-    modelDeleteAsyncExample: async function (columnName, columnValue, cb) {
   
-  
-      const results = await orm.ormDeleteAsyncExample("burgers", columnName, columnValue);
-
-      return results;
-
-    }
-    
-    
+       
 };
   
   // Export the database functions for the controller (catsController.js).
