@@ -1,6 +1,4 @@
 var express = require("express");
-// var hbs = require("express-handlebars");
-// const path = require("path");
 
 var PORT = process.env.PORT || 8080;
 
@@ -15,9 +13,6 @@ app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
-
-// hbs.registerPartials(path.join(__dirname, "../", "/views/partials"));
-// app.use(express.static(path.join(__dirname , "../" , "/public")));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
