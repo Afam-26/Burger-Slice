@@ -1,21 +1,21 @@
-<h1>Burgers!</h1>
+<h1>Burger-Slice App!</h1>
+
+<h2>Burgers that are ready to be eaten!</h2>🍔
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
 
 <h2>Burgers that are devoured!</h2>
 
 <ul>
   {{#each burgers}}
-    {{#unless newEatenStatus}}
-      {{!-- {{> burgers/block vegan=true}} --}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are ready to be eaten!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if newEatenStatus}}
-      {{!-- {{> burgers/block vegan=false}} --}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
