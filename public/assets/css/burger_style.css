@@ -18,3 +18,11 @@ li {
   .form-group {
     margin-bottom: 5px;
   }
+
+  .ready .eaten .form{
+    align-self: center;
+  }
+
+  .ven {
+    align-items: center;
+  }
