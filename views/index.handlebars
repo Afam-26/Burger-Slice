@@ -5,7 +5,7 @@
 <ul>
   {{#each burgers}}
     {{#unless newEatenStatus}}
-      {{> burgers/block eatenKey=true}}
+      {{!-- {{> burgers/block vegan=true}} --}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
   {{#each burgers}}
     {{#if newEatenStatus}}
-      {{> burgers/block eatenKey=false}}
+      {{!-- {{> burgers/block vegan=false}} --}}
     {{/if}}
   {{/each}}
 </ul>

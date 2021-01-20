@@ -7,12 +7,13 @@ $(function() {
       // this var helps the ajax to read if its true or false
       // this is used in line 16 in the ajax
       var newEatenStatus = {
-        eatenKey: boolean
+        vegan: boolean
       };
   
       // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
+      $.ajax({
         type: "PUT",
+        url: "/burgers/" + id,
         data: newEatenStatus
       }).then(
         function() {
@@ -32,11 +33,11 @@ $(function() {
         name: $("#ca").val().trim(),
         // Idk why the "checked" is there but this checks to 
         // see if the value is eatenKey or awake
-        eatenKey: $("[name=eatenKey]:checked").val().trim()
+        vegan: $("[name=vegan]:checked").val().trim()
       };
   
       // Send the POST request.
-      $.ajax("/api/burgers", {
+      $.ajax("/burgers/create", {
         type: "POST",
         data: newBurger
       }).then(

@@ -39,8 +39,8 @@ function objToSql(ob) {
 var orm = {
 
     all: function(tableInput, cb) {
-        var SQL_STATEMENT  = "SELECT * FROM " + tableInput + ";";
-        connection.query(SQL_STATEMENT, (err, result)=> {
+        var queryString  = "SELECT * FROM " + tableInput + ";";
+        connection.query(queryString, (err, result)=> {
             if (err) {
                 throw err;
             }
@@ -49,7 +49,7 @@ var orm = {
     },
 
     create: function(table, cols, vals, cb) {
-        var SQL_STATEMENT = "INSERT INTO " + table;
+        var queryString = "INSERT INTO " + table;
     
         queryString += " (";
         queryString += cols.toString();
@@ -58,9 +58,9 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
     
-        console.log(SQL_STATEMENT);
+        console.log(queryString);
     
-        connection.query(SQL_STATEMENT, vals, function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
           if (err) {
             throw err;
           }
@@ -70,15 +70,15 @@ var orm = {
       },
 
       update: function(table, objColVals, condition, cb) {
-        var SQL_STATEMENT = "UPDATE " + table;
+        var queryString = "UPDATE " + table;
     
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
     
-        console.log(SQL_STATEMENT);
-        connection.query(SQL_STATEMENT, function(err, result) {
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
           }
@@ -100,11 +100,11 @@ var orm = {
         });
       },
       ormDeleteAsyncExample: async function(tableName, columnName, columnValue) {
-        let SQL_STATEMENT = `DELETE FROM ?? 
+        let queryString = `DELETE FROM ?? 
                              WHERE ?? = ?`;
     
         try {
-            const [rows, fields] = await connection.promise().query(SQL_STATEMENT, [tableName, columnName, columnValue]);
+            const [rows, fields] = await connection.promise().query(queryString, [tableName, columnName, columnValue]);
             return rows;
         } catch (error) {
             console.log(error);
