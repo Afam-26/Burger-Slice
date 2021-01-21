@@ -17,6 +17,7 @@ var burger = {
     },
     update: function(devoured, id, cb) {
       orm.updateOne(devoured, id, (res)=> {
+        console.log("res ", res)
         cb(res);
       });
     },  

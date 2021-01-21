@@ -5,7 +5,7 @@ $(function() {
       var newDevour = $(this).data("newdevoured");
   
       // this var helps the ajax to read if its true or false     
-      var newDevourStatus = {
+      var newDevourStatus = {        
         devoured: newDevour
       };
   
