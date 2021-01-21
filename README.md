@@ -15,9 +15,9 @@ This is a node application that allow users to create burgers they will like to 
 
 ## Screenshot
 
-![Front page](./assets/role.png)
+![Front page](./public/assets/image/front.png)
 
-![video](./assets/video.gif)
+![video](./public/assets/image/video.gif)
 
 [Click here for the video link](https://drive.google.com/file/d/1v0_m5qBjAkHcLmp_DahT-S7FSrtO4Qx7/view?usp=sharing)
 
@@ -30,7 +30,7 @@ Email: afam262@gmail.com
 
 Github Username: Afam-26
 
-[Github link](https://github.com/Afam-26/Content-Management-System.git) 
+[Github link](https://github.com/Afam-26/Burger-Slice.git) 
 
 
 ## Programming-Language 
