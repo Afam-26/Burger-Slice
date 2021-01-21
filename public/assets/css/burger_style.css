@@ -1,28 +1,41 @@
+body {
+  background-color: #bfb095;
+}
 
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background: #faebd7;   
+    color: black;
+    border-radius: 25px;
+    font-weight: bolder;
   }
   
   .label {
     font-weight: bold;
   }
   
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
+ 
   .form-group {
-    margin-bottom: 5px;
+    margin-bottom: 5px;   
+    padding-left: 40px;
+    margin-top: 15px;
   }
 
-  .ready .eaten .form{
-    align-self: center;
+  button {
+    border-radius: 25px;    
   }
 
-  .ven {
-    align-items: center;
-  }
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2{  
+  padding-left: 30px;
+}
+.create-form{
+  padding-left: 50px;
+  
+}
+
