@@ -21,7 +21,7 @@ This is a node application that allow users to create burgers they will like to 
 
 [Click here for the video link](https://drive.google.com/file/d/1HxemWznTZB_291NVgpjunY036jH3Y8PG/view?usp=sharing)
 
-[Click here for my Portfolio](https://protected-fortress-39623.herokuapp.com/)
+[Click here for my Portfolio](https://afam-26.github.io/)
 
  
 ## Contacts Info
